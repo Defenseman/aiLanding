@@ -1,0 +1,78 @@
+@use '../styles/mixins' as *;
+
+.section {
+  padding: 120px 0;
+
+  @include md {
+    padding: 80px 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+
+  @include lg {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.bio {
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.65;
+  color: var(--ink-dim);
+
+  p {
+    margin: 0 0 20px;
+  }
+
+  strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+}
+
+.facts {
+  @include card;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  height: fit-content;
+
+  @include md {
+    padding: 24px 20px;
+  }
+}
+
+.factRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.factKey {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.factVal {
+  font-size: 14px;
+  color: var(--ink);
+  text-align: right;
+}

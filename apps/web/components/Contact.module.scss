@@ -1,0 +1,268 @@
+@use '../styles/mixins' as *;
+
+.section {
+  padding: 120px 0;
+  border-top: 1px solid var(--line);
+
+  @include md {
+    padding: 80px 0;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+
+  @include lg {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.side {
+  align-self: start;
+  position: sticky;
+  top: 100px;
+
+  @include lg {
+    position: static;
+  }
+}
+
+.lead {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-dim);
+  margin: 0 0 32px;
+  max-width: 38ch;
+}
+
+.directs {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--line);
+}
+
+.directLink {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.directKey {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.directVal {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+/* Form */
+
+.form {
+  @include card;
+  border-radius: var(--radius-lg);
+  padding: 40px;
+
+  @include md {
+    padding: 24px 20px;
+  }
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  input,
+  textarea {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+    font: inherit;
+    font-size: 15px;
+    color: var(--ink);
+    transition: border-color 0.2s, background 0.2s;
+
+    &::placeholder {
+      color: var(--ink-muted);
+    }
+
+    &:hover {
+      border-color: var(--ink-muted);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: rgba(124, 255, 178, 0.03);
+    }
+
+    &[aria-invalid='true'] {
+      border-color: var(--danger);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+  }
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.req {
+  color: var(--accent);
+  margin-left: 4px;
+}
+
+.errorMsg {
+  display: block;
+  min-height: 18px;
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--danger);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @include sm {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
+
+.submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: none;
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: background 0.2s, opacity 0.2s;
+  margin-top: 12px;
+
+  &:hover:not(:disabled) {
+    background: #9dffc8;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  &[data-state='success'] {
+    background: var(--accent);
+  }
+
+  &[data-state='error'] {
+    background: var(--danger);
+    color: white;
+  }
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.success,
+.error {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  line-height: 1.5;
+  animation: slideIn 0.3s var(--ease) both;
+
+  strong {
+    margin-right: 6px;
+  }
+}
+
+.success {
+  background: rgba(124, 255, 178, 0.08);
+  border: 1px solid rgba(124, 255, 178, 0.3);
+  color: var(--accent);
+}
+
+.error {
+  background: rgba(255, 107, 107, 0.08);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  color: var(--danger);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.privacy {
+  margin: 20px 0 0;
+  font-size: 11px;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
