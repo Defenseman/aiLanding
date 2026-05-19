@@ -2,7 +2,7 @@
 
 Тестовое задание: лендинг-презентация себя как разработчика + рабочая форма обратной связи + AI-помощник.
 
-**Деплой:** https://[ВАШ_ДОМЕН].vercel.app
+**Деплой:** https://web-production-f59b0.up.railway.app/
 
 ---
 
@@ -25,7 +25,7 @@
 | Frontend | Next.js 14 (App Router), TypeScript, SCSS Modules, React Hook Form, Zod |
 | Backend | NestJS 10, class-validator, Nodemailer, @nestjs/throttler |
 | AI | OpenAI SDK (gpt-4o-mini по умолчанию, легко заменить на Anthropic) |
-| Деплой | Vercel (frontend) + Railway / Render (backend) |
+| Деплой | Railway |
 | Прочее | npm workspaces, ESLint, dotenv |
 
 ---
@@ -95,7 +95,7 @@ landing/
 ### 2. Установка
 
 ```bash
-git clone https://github.com/USERNAME/landing.git
+git clone https://github.com/Defenseman/aiLanding.git
 cd landing
 npm install
 ```
@@ -273,6 +273,6 @@ curl -X POST http://localhost:4000/api/contact \
 
 ## Контакты
 
-- Email: [EMAIL]
-- Telegram: [@TELEGRAM]
-- GitHub: [github.com/USERNAME]
+- Email: worknesterov@yandex.kz
+- Telegram: @Defenseman25
+- GitHub: github.com/Defenseman
