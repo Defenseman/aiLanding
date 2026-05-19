@@ -11,8 +11,8 @@ export default function Footer() {
         </div>
 
         <nav className={styles.links} aria-label="Footer">
-          <a href="mailto:[EMAIL]">Email</a>
-          <a href="https://t.me/TELEGRAM" target="_blank" rel="noreferrer">
+          <a href="mailto:work@ilyanesterov.com">Email</a>
+          <a href="https://t.me/@Defenseman25" target="_blank" rel="noreferrer">
             Telegram
           </a>
           <a
