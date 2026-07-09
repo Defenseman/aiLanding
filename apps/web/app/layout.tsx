@@ -7,6 +7,10 @@ export const metadata: Metadata = {
     'Лендинг-визитка разработчика. Стек, проекты, контакты, AI-помощник.',
   manifest: '/manifest.json',
   themeColor: '#111111',
+  icons: {
+    icon: '/icons/icon-512.png',
+    apple: '/icons/icon-192.png',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
