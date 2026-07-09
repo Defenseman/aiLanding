@@ -13,5 +13,8 @@
   },
   "engines": {
     "node": ">=18.17.0"
+  },
+  "dependencies": {
+    "next-pwa": "^5.6.0"
   }
 }

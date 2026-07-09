@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: 'Илья — Fullstack Developer',
   description:
     'Лендинг-визитка разработчика. Стек, проекты, контакты, AI-помощник.',
+  manifest: '/manifest.json',
+  themeColor: '#111111',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'Ilya Dev',
+  },
   openGraph: {
     title: 'Илья — Fullstack Developer',
     description: 'Стек, проекты, контакты, AI-помощник.',
