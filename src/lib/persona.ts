@@ -1,6 +1,6 @@
 /**
  * Persona — the data the AI assistant uses to answer questions about the developer.
- * Edit this file with your real info before deploying.
+ * This mirrors the NestJS persona used by the previous backend.
  */
 export const PERSONA = `
 Имя: Илья

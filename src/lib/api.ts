@@ -1,6 +1,4 @@
-const BASE =
-  process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '') ??
-  'http://localhost:4000/api';
+const BASE = '';
 
 export interface ApiError extends Error {
   status?: number;
@@ -56,13 +54,13 @@ export interface ContactPayload {
 
 export const api = {
   contact: (payload: ContactPayload) =>
-    request<{ ok: true }>('/contact', {
+    request<{ ok: true }>('/api/contact', {
       method: 'POST',
       body: JSON.stringify(payload),
     }),
 
   chat: (messages: { role: 'user' | 'assistant'; content: string }[]) =>
-    request<{ reply: string }>('/chat', {
+    request<{ reply: string }>('/api/chat', {
       method: 'POST',
       body: JSON.stringify({ messages }),
     }),
